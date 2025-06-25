@@ -20,7 +20,7 @@ push = require 'push'
 -- classic OOP class library
 Class = require 'class'
 
--- bird class we've written
+-- Bird class we've written
 require 'Bird'
 require 'Pipe'
 require 'PipePair'
@@ -48,10 +48,14 @@ local GROUND_SCROLL_SPEED = 60
 -- point at which we should loop our background back to X 0
 local BACKGROUND_LOOPING_POINT = 413
 
--- our bird sprite
+
 local bird = Bird()
-local pipes = {}
+local pipepairs = {}
 local spawnTimer = 0
+local SPAWN_INTERVAL = 2
+local lastY = -PIPE_HEIGHT + math.random(80) + 20
+-- scrolling variable to pause the game when we collide with a pipe
+local scrolling = true
 
 function love.load()
     love.keyboard.keysPressed = {}
@@ -97,28 +101,39 @@ end
 --]]
 
 function love.update(dt)
-    spawnTimer = spawnTimer + dt
-    if spawnTimer > 2 then
-        table.insert(pipes, Pipe())
-        spawnTimer = 0
-    end
-    -- scroll background by preset speed * dt, looping back to 0 after the looping point
-    backgroundScroll = (backgroundScroll + BACKGROUND_SCROLL_SPEED * dt) 
-        % BACKGROUND_LOOPING_POINT
+    if scrolling then
+        -- scroll background by preset speed * dt, looping back to 0 after the looping point
+        backgroundScroll = (backgroundScroll + BACKGROUND_SCROLL_SPEED * dt) 
+            % BACKGROUND_LOOPING_POINT
 
-    -- scroll ground by preset speed * dt, looping back to 0 after the screen width passes
-    groundScroll = (groundScroll + GROUND_SCROLL_SPEED * dt) % VIRTUAL_WIDTH
-
-    bird:update(dt)
-    love.keyboard.keysPressed = {}
-    for k, pipe in pairs(pipes) do
-        pipe:update(dt)
-
-        if pipe.x < -pipe.width then
-            table.remove(pipes, k)
+        -- scroll ground by preset speed * dt, looping back to 0 after the screen width passes
+        groundScroll = (groundScroll + GROUND_SCROLL_SPEED * dt) % VIRTUAL_WIDTH
+        
+        spawnTimer = spawnTimer + dt
+        if spawnTimer > SPAWN_INTERVAL then
+            local y = math.max(-PIPE_HEIGHT + 10,
+                math.min(lastY + math.random(-20, 20), VIRTUAL_HEIGHT -90 - PIPE_HEIGHT))
+            lastY = y
+            table.insert(pipepairs, PipePair(y))
+            spawnTimer = 0
+        end
+        
+        bird:update(dt)
+        love.keyboard.keysPressed = {}
+        for k, pair in pairs(pipepairs) do
+            pair:update(dt)
+            for l , pipe in pairs(pair.pipes) do
+                if bird:collides(pipe) then
+                    scrolling = false
+                end
+            end
+        end
+        for k, pair in pairs(pipepairs) do 
+            if pair.remove then
+                table.remove(pipepairs, k)            
+            end
         end
     end
-
 end
 
 function love.draw()
@@ -138,8 +153,8 @@ function love.draw()
 
     -- render our bird to the screen using its own render logic
     bird:render() -- The colon means pass an implicit self to the function
-    for k, pipe in pairs(pipes) do
-        pipe:render()
+    for k, pair in pairs(pipepairs) do
+        pair:render()        
     end
     push:finish()
-end
+end 
