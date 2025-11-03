@@ -1,4 +1,5 @@
 #include <stdio.h>
+/* Number input */
 int main(){
     int usf, euf;
     printf("Enter US Floor\n");
