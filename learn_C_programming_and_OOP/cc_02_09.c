@@ -1,8 +1,8 @@
 #include <stdio.h>
-/* Line Input */
+/* Line Input (safe) */
 int main(){
     char line[1000];
     printf("Enter line\n");
-    scanf("%[^\n]1000s", line);
+    fgets(line, 1000, stdin);
     printf("Line: %s\n", line);    
 }
