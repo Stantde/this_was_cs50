@@ -24,4 +24,6 @@ Don't forget to push changes at the end of a session!
 * 2:20:00 in
 ## 1.3 The For Statement
 ## 1.4 Symbolic Constants
-* 2:29:20
+* 2:29:20 "#define" without ";"
+## 1.5 A Collection of Useful Programs
+
