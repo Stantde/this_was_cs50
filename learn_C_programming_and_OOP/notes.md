@@ -22,3 +22,4 @@ Don't forget to push changes at the end of a session!
 
 
 * 2:20:00 in
+## 1.3 The For Statement
