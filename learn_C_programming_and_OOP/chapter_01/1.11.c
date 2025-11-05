@@ -31,15 +31,15 @@ int main(){
     int is_seq_of_lttrs_dgts_apos = FALSE;
     int word_count= 0;
     while((current_character = getchar()) != EOF){
-        if ((is_seq_of_lttrs_dgts_apos == FALSE && UPPERCASE_A <=current_character && current_character<=UPPERCASE_Z)||
-            (is_seq_of_lttrs_dgts_apos == FALSE && LOWERCASE_A <= current_character && current_character <= LOWERCASE_Z)){
+        if ((is_seq_of_lttrs_dgts_apos == FALSE && (UPPERCASE_A <=current_character && current_character<=UPPERCASE_Z))||
+            (is_seq_of_lttrs_dgts_apos == FALSE && (LOWERCASE_A <= current_character && current_character <= LOWERCASE_Z))){
             is_seq_of_lttrs_dgts_apos = TRUE;
             word_count++;
         }
-        if ((is_seq_of_lttrs_dgts_apos == TRUE && !(current_character >= ZERO && current_character <= NINE))||
-            (is_seq_of_lttrs_dgts_apos == TRUE && !(current_character >= UPPERCASE_A && current_character <=UPPERCASE_Z))||
-            (is_seq_of_lttrs_dgts_apos == TRUE && !(current_character >= LOWERCASE_A && current_character <= LOWERCASE_Z))||
-            (is_seq_of_lttrs_dgts_apos == TRUE && !(current_character == APOSTROPHE))) {
+        if ((is_seq_of_lttrs_dgts_apos == TRUE && !((current_character >= ZERO && current_character <= NINE)||
+            (current_character >= UPPERCASE_A && current_character <=UPPERCASE_Z)||
+            (current_character >= LOWERCASE_A && current_character <= LOWERCASE_Z)||
+            (current_character == APOSTROPHE)))) {
             is_seq_of_lttrs_dgts_apos = FALSE;
         }
         putchar(current_character);            
