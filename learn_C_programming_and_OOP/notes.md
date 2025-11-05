@@ -43,3 +43,5 @@ Exercise 1-8. Write a program to replace each tab by the three-character sequenc
 * 3:05:25
 * Exercise 1-12. Write a program to print a histogram of the lengths of words in its input. It is easiest to draw the histogram horizontally; a vertical orientation is more challenging.
 
+## 1.7 Functions
+* 0807 11-05-2025 3:06:32
