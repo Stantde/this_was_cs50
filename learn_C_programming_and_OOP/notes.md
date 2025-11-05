@@ -14,4 +14,4 @@ Don't forget to push changes at the end of a session!
 
 ## Character Sets
 * The C char type is just a number. A = 65. Character arrays need to allocate an extra byte to store the line-end chracter.
-* Complete Exercise 1-17 in K&R
+* Complete Exercise 1-17 in K&R (Where is it?)
