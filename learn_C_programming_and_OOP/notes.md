@@ -32,10 +32,14 @@ Exercise 1-7. Write a program to copy its input to its output, replacing each st
 
 Exercise 1-8. Write a program to replace each tab by the three-character sequence >, backspace, -, which prints as >, and each backspace by the similar sequence <. This makes tabs and backspaces visible.
 * 2:51:15  0201 11-05-2025
-Exercise 1-9. How would you test the word count program? What are some boundaries?
+* Exercise 1-9. How would you test the word count program? What are some boundaries?
 
-Exercise 1-10. Write a program which prints the words in its input, one per line.
+* Exercise 1-10. Write a program which prints the words in its input, one per line.
 
-Exercise 1-11. Revise the word count program to use a better definition of "word," for example, a sequence of letters, digits and apostrophes that begins with a letter.
+* Exercise 1-11. Revise the word count program to use a better definition of "word," for example, a sequence of letters, digits and apostrophes that begins with a letter.
 
+* Admittedly, I used some of my knowledge from cs50x. O wait, && is ok to use!
+## 1.6 Arrays
+* 3:05:25
+* Exercise 1-12. Write a program to print a histogram of the lengths of words in its input. It is easiest to draw the histogram horizontally; a vertical orientation is more challenging.
 
