@@ -47,3 +47,9 @@ Exercise 1-8. Write a program to replace each tab by the three-character sequenc
 ## 1.7 Functions
 * 0807 11-05-2025 3:06:32
 * Exercise 1-13. Write a program to convert its input to lower case, using a function lower(c) which returns c if c is not a letter, and the lower case value of c if it is a letter.
+## 1.8 Arguments - Call by Value
+* 2306 11/5/2025 3:12:07
+* Call by value is more of the norm than call by reference. This helps keep data safe from unintentional modifications.
+* When the name of an array is used as an argument, the value passed to the function is actually the location or address of the beginning of the array. (There is no copying of array elements.) By subscripting this value, the function can access and alter any element of the array.
+## 1.9 Character Arrays
+* 2314 11-05-2025 3:17:30
