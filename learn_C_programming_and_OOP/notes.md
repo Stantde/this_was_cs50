@@ -23,26 +23,41 @@ Don't forget to push changes at the end of a session!
 
 * 2:20:00 in
 # K&R Chapter 1
+## 1.1 Getting Started
+* print statements printf("Hello World!\n")
+* compiling and running
+## 1.2 Variables and Arithmetic
+* char, short, long, doubles
 ## 1.3 The For Statement
+* for and while loops (iteration)
 ## 1.4 Symbolic Constants
 * 2:29:20 "#define" without ";"
+
 ## 1.5 A Collection of Useful Programs
-Exercise 1-6. Write a program to count blanks, tabs, and newlines.
+* The standard library provides functions for reading and writing a character at a time. getchar() fetches the next input character each time it is called, and returns that character as its value. 
+* The function putchar(c) is the complement of getchar:
 
-Exercise 1-7. Write a program to copy its input to its output, replacing each string of one or more blanks by a single blank.
+putchar(c)
+prints the contents of variable c on some output medium, again usually the terminal. Calls to putchar and printf may be interleaved; the output will appear in the order in which the calls are made.
 
-Exercise 1-8. Write a program to replace each tab by the three-character sequence >, backspace, -, which prints as >, and each backspace by the similar sequence <. This makes tabs and backspaces visible.
+
+* Exercise 1-6. Write a program to count blanks, tabs, and newlines.
+
+* Exercise 1-7. Write a program to copy its input to its output, replacing each string of one or more blanks by a single blank.
+
+* Exercise 1-8. Write a program to replace each tab by the three-character sequence >, backspace, -, which prints as >, and each backspace by the similar sequence <. This makes tabs and backspaces visible.
 * 2:51:15  0201 11-05-2025
 * Exercise 1-9. How would you test the word count program? What are some boundaries?
 
 * Exercise 1-10. Write a program which prints the words in its input, one per line.
 
 * Exercise 1-11. Revise the word count program to use a better definition of "word," for example, a sequence of letters, digits and apostrophes that begins with a letter.
-
+* || and &&, >, <, >=, <=, "\n" vs '\n' int value of char.
 * Admittedly, I used some of my knowledge from cs50x. O wait, && is ok to use!
 ## 1.6 Arrays
 * 3:05:25
 * Exercise 1-12. Write a program to print a histogram of the lengths of words in its input. It is easiest to draw the histogram horizontally; a vertical orientation is more challenging.
+* if/ else if/ else
 
 ## 1.7 Functions
 * 0807 11-05-2025 3:06:32
@@ -54,3 +69,11 @@ Exercise 1-8. Write a program to replace each tab by the three-character sequenc
 ## 1.9 Character Arrays
 * 2314 11-05-2025 3:17:30
 * The copy function is sharp.
+* Exercise 1-14. Revise the main routine of the longest-line program so it will correctly print the length of arbitrarily long input lines, and as much as possible of the text.
+
+* Exercise 1-15. Write a program to print all lines that are longer than 80 characters.
+
+* Exercise 1-16. Write a program to remove trailing blanks and tabs from each line of input, and to delete entirely blank lines.
+
+* Exercise 1-17. Write a function reverse(s) which reverses the character string s. Use it to write a program which reverses its input a line at a time.
+
