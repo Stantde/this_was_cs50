@@ -22,6 +22,7 @@ Don't forget to push changes at the end of a session!
 
 
 * 2:20:00 in
+# K&R Chapter 1
 ## 1.3 The For Statement
 ## 1.4 Symbolic Constants
 * 2:29:20 "#define" without ";"
@@ -45,3 +46,4 @@ Exercise 1-8. Write a program to replace each tab by the three-character sequenc
 
 ## 1.7 Functions
 * 0807 11-05-2025 3:06:32
+* Exercise 1-13. Write a program to convert its input to lower case, using a function lower(c) which returns c if c is not a letter, and the lower case value of c if it is a letter.
