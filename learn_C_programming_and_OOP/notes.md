@@ -53,3 +53,4 @@ Exercise 1-8. Write a program to replace each tab by the three-character sequenc
 * When the name of an array is used as an argument, the value passed to the function is actually the location or address of the beginning of the array. (There is no copying of array elements.) By subscripting this value, the function can access and alter any element of the array.
 ## 1.9 Character Arrays
 * 2314 11-05-2025 3:17:30
+* The copy function is sharp.
