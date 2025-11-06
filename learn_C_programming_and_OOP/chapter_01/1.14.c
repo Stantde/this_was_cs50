@@ -24,26 +24,36 @@ possible of the text.
 int main() /* find longest line */
 {
     int len; /* current line length */
-    int max; /* maximum length seen so far */
+    int max = 0; /* maximum length seen so far */
+    int rel_max = 0; /* current max*/
     char line[MAXLINE]; /* current input line */
     char save[MAXLINE]; /* longest line, saved */
     int line_complete = TRUE;
-
-    max = 0;
+    
     while ((len = get_line(line, MAXLINE)) > 0)
         if ((line[len-1]=='\n' || line[len-2] == '\n') && line_complete == TRUE){
-            if (len > max) {
-                max = len;
+            if (len > rel_max) {
+                rel_max = len;
                 copy(line, save);
+                if (rel_max > max){
+                    max = rel_max;                    
+                }
+                rel_max =0;
             }
         } else if ((line[len-1]=='\n' || line[len-2] == '\n') && line_complete == FALSE){
-            max += len;
+            rel_max += len;
             copy(line, save);
             line_complete = TRUE;
+            if (rel_max > max){
+                max = rel_max;
+            }
+            rel_max =0;
+                
+    
         } else if (line[len-1]!='\n' && line[len-2] != '\n') {
-            max += len; // change to +=            
+            rel_max += len; // change to +=            
             line_complete = FALSE;
-        }
+        }        
     if (max > 0) /* there was a line */
         printf("%s\nlength: %d\n", save, max);
 }
