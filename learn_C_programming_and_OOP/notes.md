@@ -94,4 +94,10 @@ I may come back for these, but I feel like they are a waste of my time.
 * Exercise 1-23. Write a program to check a C program for rudimentary syntax errors like unbalanced parentheses, brackets and braces. Don't forget about quotes, both single and double, and comments. (This program is hard if you do it in full generality.)
 
 # K&R Chapter 2
-0010 11-07-2025 3:52:10
+* 0010 11-07-2025 4:01:10
+## 2.2 Data Types and Sizes
+## 2.3 Constants
+* 0034 11-07-2025
+## 2.4 Declarations
+* I have to take a break here. I'm struggling to absorb new information.
+* 0051 11-07-2025 4:14:30
