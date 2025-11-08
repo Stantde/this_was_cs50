@@ -57,7 +57,7 @@ void process_line(char line[], int length, int width){
         if (cursor == width){
             if ((width - last_blank)>0){
                 // Blank between start and end. replace line[last_blank] with '\n' 
-                line[last_blank]='\n';              
+                line[last_blank]='\n';                              
             } else if ((width - last_blank) == 0){
                 // This segment is long, so push everything back by one, then insert '\n' at width.
                 // Does this break at 0?
@@ -65,9 +65,9 @@ void process_line(char line[], int length, int width){
                     line[i] = line[i-1];
                 }
                 line[width]='\n';
-                last_blank = cursor; // Am I off by one here?
+                last_blank = cursor; // Am I off by one here?                
             }
-            width += last_blank % COLUMNMAX;
+            width = last_blank + COLUMNMAX;
             if (width > length){
                 width = length;
             }                
