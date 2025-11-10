@@ -96,3 +96,10 @@ void process_line(char line[], int length, int width){
     }
     return;
 }
+/*
+Taken from entab program:
+(c =='\t'){
+            c=' ';
+            for (int i = 0; i < TABCONVERSION-1; i++){
+                putchar(' ');
+*/
