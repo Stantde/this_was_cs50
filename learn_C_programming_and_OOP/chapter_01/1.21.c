@@ -104,7 +104,7 @@ int detab_line(char line[], int length, int conversion){
     for (int i =0; i<length; i++){
         if (line[i] == '\t'){
             length+=delta;
-            for (int j=length; j>i; j--){
+            for (int j=length-delta; j>i; j--){
                 line[j + delta] = line[j];
             }
             for(int k=i; k<i+conversion; k++){
