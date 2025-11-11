@@ -4,6 +4,7 @@
 #define MAXLINE 1000 /* maximum input line size */
 #define TAB 2 /* Number of spaces represented by '\t' */
 
+void detab_line(char line[], int length, int conversion);
 int get_blank(char c);
 int get_line(char line[], int lim);
 void process_line(char line[], int length, int width);
@@ -96,6 +97,11 @@ void process_line(char line[], int length, int width){
     }
     return;
 }
+/*
+Iterate through line. If '\t' is found, extend line by conversion - 1, move 
+each element from the end refer to diagram to complete...
+*/
+void detab_line(char line[], int length, int conversion);
 /*
 Taken from entab program:
 (c =='\t'){
