@@ -4,13 +4,14 @@
 #define MAXLINE 1000 /* maximum input line size */
 #define TAB 2 /* Number of spaces represented by '\t' */
 
-void detab_line(char line[], int length, int conversion);
+int detab_line(char line[], int length, int conversion);
 int get_blank(char c);
 int get_line(char line[], int lim);
 void process_line(char line[], int length, int width);
 
 /*
 * Exercise 1-21. Write a program to "fold" long input lines after the last non-blank character that occurs before the n-th column of input, where n is a parameter. Make sure your program does something intelligent with very long lines, and if there are no blanks or tabs before the specified column.
+* with       tabs Exercise 1-21. Wr   ite a program to "fold" l           ong input lines afte    r the last non-blank character that o   ccurs before the n-th column of input, where n is a parameter. Make sure your program does something intelligent with very long lines, and if there are no blanks or tabs before the specified column.  
 */
 
 int main() /* Folds input lines after reaching COLUMNMAX columns. */
@@ -19,6 +20,7 @@ int main() /* Folds input lines after reaching COLUMNMAX columns. */
     int length;
     
     length = get_line(line, (MAXLINE-(MAXLINE/COLUMNMAX + 1))); // Second argument, lim changes based of max number of largest ... What am I thinking?
+    length = detab_line(line, length, TAB); // This function has unexpected behavior... When I type '\t', it works, but if I copy and paste a '\t', it does not.
     process_line(line, length, COLUMNMAX);
     printf("%s", line);
     return 0;
@@ -47,13 +49,6 @@ int get_line(char line[], int lim){
 Takes line, line length, and width as parameters. Finds the blanks and tries 
 to fold the line to an appropriate width, breaking it into smaller lines if 
 necessary.
-
-This works for ' ', but what should I do about '\t'? 
-    1. Treat '\t' as single ' '.
-    2. Treat '\t' as multiple ' '.
-        How many? 2, 4, 8. Confgiurable as symbolic constant.
-    3. Ignore.
-    4. Something else?
 */
 void process_line(char line[], int length, int width){
     int cursor;
@@ -98,14 +93,25 @@ void process_line(char line[], int length, int width){
     return;
 }
 /*
-Iterate through line. If '\t' is found, extend line by conversion - 1, move 
-each element from the end refer to diagram to complete...
+Convert every '\t' into a sequence of ' ' determined by symbolic constant TAB
 */
-void detab_line(char line[], int length, int conversion);
-/*
-Taken from entab program:
-(c =='\t'){
-            c=' ';
-            for (int i = 0; i < TABCONVERSION-1; i++){
-                putchar(' ');
-*/
+int detab_line(char line[], int length, int conversion){
+    /*
+    Iterate through line. If '\t' is found, extend line by conversion - 1, shift 
+    each element of the array towards the new end.
+    */
+    int delta = conversion - 1;
+    for (int i =0; i<length; i++){
+        if (line[i] == '\t'){
+            length+=delta;
+            for (int j=length; j>i; j--){
+                line[j + delta] = line[j];
+            }
+            for(int k=i; k<i+conversion; k++){
+                line[k] = ' ';                
+            }
+        // Though there is no need to iterate through the freshly written ' 's, allow the program to continue from where it was.
+        }
+    }
+    return length;
+}
