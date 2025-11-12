@@ -19,7 +19,7 @@ int main() /* Folds input lines after reaching COLUMNMAX columns. */
     char line[MAXLINE]; /* current input line */
     int length;
     
-    length = get_line(line, ((MAXLINE-1)/TAB)); // Second argument, lim changes based of max number of largest ... What am I thinking?
+    length = get_line(line, ((MAXLINE-1)/TAB)); // It may be possible to create a more robust formula which will increase lim.
     length = detab_line(line, length, TAB); // This function has unexpected behavior... When I type '\t', it works, but if I copy and paste a '\t', it does not.
     process_line(line, length, COLUMNMAX);
     printf("%s", line);
