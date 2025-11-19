@@ -1,4 +1,4 @@
 #!/usr/bin/bash
-gcc 1.21.c;
-./a.out < index.html > output.txt;
+gcc 1.22.c;
+./a.out < input.txt > output.txt;
 code output.txt;
