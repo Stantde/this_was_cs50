@@ -99,3 +99,4 @@ prints the contents of variable c on some output medium, again usually the termi
 ## 2.4 Declarations
 * I have to take a break here. I'm struggling to absorb new information.
 * 0051 11-07-2025 4:14:30
+* 1359 11-20-2025 It took me a while to notice this, but the entire course is offered on the cc4e website. I think instead of reading from K&R book and performing exercises as they are in it, I will instead work on the exercises from the website. If I need additional practice, I will return to the book.

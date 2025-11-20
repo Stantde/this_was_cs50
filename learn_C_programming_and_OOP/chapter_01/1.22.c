@@ -18,6 +18,7 @@ forget to handle quoted strings and character constants properly.
 #define IN_LINE_COMMENT	4	/*The processor is inside a line comment (// ...).*/
 #define FINAL 5
 #define STARTING_COMMENT 6
+#define ESCAPED 7 
     
 void check_state(char c);
 int get_line(char line[], int lim);

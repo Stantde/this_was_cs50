@@ -1,0 +1,8 @@
+e37ba
+htoi('e37ba') = 0
+f
+htoi('f') = 0
+F0
+htoi('F0') = 0
+12fab
+htoi('12fab') = 0
