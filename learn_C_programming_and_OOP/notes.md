@@ -100,3 +100,20 @@ prints the contents of variable c on some output medium, again usually the termi
 * I have to take a break here. I'm struggling to absorb new information.
 * 0051 11-07-2025 4:14:30
 * 1359 11-20-2025 It took me a while to notice this, but the entire course is offered on the cc4e website. I think instead of reading from K&R book and performing exercises as they are in it, I will instead work on the exercises from the website. If I need additional practice, I will return to the book.
+## 2.5 Arithmetic Operators
+## 2.6 Relational and Logical Operators
+* Exercise 2-1. Write a loop equivalent to the for loop above without using &&.
+
+## 2.7 Type Conversions
+* 1935 11-20-2025 042800
+* isdigit = c >= '0' && c <= '9';
+sets isdigit to 1 if c is a digit, and to 0 if not. (In the test part of if, while, for, etc., "true" just means "non-zero.")
+
+* Includes rounding rules.
+* Exercise 2-3. Write an alternate version of squeeze(s1, s2) which deletes each character in s1 which matches any character in the string s2.
+
+* Exercise 2-4. Write the function any(s1, s2) which returns the first location in the string s1 where any character from the string s2 occurs, or -1 if s1 contains no characters from s2.
+
+## 2.8 Increment and Decrement Operators
+* 2054 11-20-2025 04:43:41
+

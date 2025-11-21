@@ -1,4 +1,3 @@
-htoi('e37ba') = 931770
-htoi('f') = 15
-htoi('F0') = 240
-htoi('12fab') = 77739
+Hello World!
+Removing letters: lr
+Heo Wod!
