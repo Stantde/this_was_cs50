@@ -116,4 +116,20 @@ sets isdigit to 1 if c is a digit, and to 0 if not. (In the test part of if, whi
 
 ## 2.8 Increment and Decrement Operators
 * 2054 11-20-2025 04:43:41
+## 2.9 Bitwise Logical Operators
+
+* [bitwise operations](https://www.geeksforgeeks.org/dsa/complete-reference-for-bitwise-operators-in-programming-coding/)
+
+* sizeof{char}<=sizeof{short}<=sizeof{int}<=sizeof{long}<=sizeof{long long}
+
+* The char type is always 1 byte by definition in C.
+* x << 2 shifts x left by two positions, filling vacated bits with 0; this is equivalent to multiplication by 4. 
+* I'm struggling here. It may be time to call it a night. 4:46:59
+Exercise 2-5. Modify getbits to number bits from left to right.
+
+Exercise 2-6. Write a function wordlength() which computes the word length of the host machine, that is, the number of bits in an int. The function should be portable, in the sense that the same source code works on all machines.
+
+Exercise 2-7. Write the function rightrot(n, b) which rotates the integer n to the right by b bit positions.
+
+Exercise 2-8. Write the function invert(x, p, n) which inverts (i.e., changes 1 into 0 and vice versa) the n bits of x that begin at position p, leaving the others unchanged.
 
