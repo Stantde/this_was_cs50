@@ -35,6 +35,36 @@ Hypothesis: It is possible to convert the hex value to decimal in a single pass.
 However, The goal will be to simply get through this assignment. I will transfer 
 this to my github code space.
 */
-	printf("%s\n", s);
-	return 0;
+// I'm seeing inspriation from atoi
+    int i, h, count, sum;    
+    i=0;
+    count=0;
+    sum=0;
+    int pow(int a, int b); // Maybe it's not necessary to implement a recursive solution??
+    while (s[count]!='\0'){
+        ++count;
+    }
+    --count;
+    while (count >= 0){
+        if (s[count] >= 'a' && s[count] <= 'f'){
+            //printf("%d\n", s[count]);
+            h = s[count] - 'a'+10;
+        }
+        else if (s[count] >= 'A' && s[count] <= 'F'){
+            h=s[count]- 'A'+10;
+        }
+        else if (s[count] >= '0' && s[count] <= '9'){
+            h=s[count] - '0';
+        }
+        sum+=h*pow(16,i);
+        ++i;
+        --count;
+    }
+    return sum;
+}
+int pow(int a, int b){
+    if (b==0){
+        return 1;
+    }    
+    return (a*pow(a,b-1));
 }
