@@ -18,15 +18,19 @@ unsigned x, p, n;
 }
 
 */
-int getbits(unsigned x, unsigned p, unsigned n);
-int main(void){
-    int result = getbits(21, 4, 3);
-    printf("%b\n", result);
+int modified_getbits(unsigned x, int p, int n);
+int main() {
+    int a;
+    a=modified_getbits(0b00110000000000000000000000000000, 2, 2);
+    printf("%b\n", a); // Outputs 11
+
     return 0;
 }
-int getbits(unsigned x, unsigned p, unsigned n){
-/* get n bits from position p */
-
-    return((x >> (p+1-n)) &  ~(~0 << n));
+int modified_getbits(unsigned x, int p, int n){
+/*
+At present, this implementation of modified_getbits will return 0 for bits that
+are not defined. Would it be better to return -1 or similar value ??
+*/
+int b = 32; // b represents the number of bits in an unsigned int. At this point, assume 32.
+return (( x >> (( b - 1 - p)-( n - 1 ))) & ~( ~0 << n ));
 }
-
