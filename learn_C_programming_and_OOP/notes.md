@@ -125,11 +125,28 @@ sets isdigit to 1 if c is a digit, and to 0 if not. (In the test part of if, whi
 * The char type is always 1 byte by definition in C.
 * x << 2 shifts x left by two positions, filling vacated bits with 0; this is equivalent to multiplication by 4. 
 * I'm struggling here. It may be time to call it a night. 4:46:59
-Exercise 2-5. Modify getbits to number bits from left to right.
+* Exercise 2-5. Modify getbits to number bits from left to right.
 
-Exercise 2-6. Write a function wordlength() which computes the word length of the host machine, that is, the number of bits in an int. The function should be portable, in the sense that the same source code works on all machines.
+* Exercise 2-6. Write a function wordlength() which computes the word length of the host machine, that is, the number of bits in an int. The function should be portable, in the sense that the same source code works on all machines.
 
-Exercise 2-7. Write the function rightrot(n, b) which rotates the integer n to the right by b bit positions.
+* Exercise 2-7. Write the function rightrot(n, b) which rotates the integer n to the right by b bit positions.
 
-Exercise 2-8. Write the function invert(x, p, n) which inverts (i.e., changes 1 into 0 and vice versa) the n bits of x that begin at position p, leaving the others unchanged.
+* Exercise 2-8. Write the function invert(x, p, n) which inverts (i.e., changes 1 into 0 and vice versa) the n bits of x that begin at position p, leaving the others unchanged.
+
+## 2.10 Assignment Operators and Expressions
+
+As an example, the function bitcount counts the number of 1-bits in its integer argument.
+```
+bitcount(n) /* count 1 bits in n */
+unsigned n;
+{
+    int b;
+
+    for (b = 0; n != 0; n >>= 1)
+        if (n & 01)
+            b++;
+    return(b);
+}```
+
+* Exercise 2-9. In a 2's complement number system, x & ( x-1 ) deletes the rightmost 1-bit in x. (Why?) Use this observation to write a faster version of bitcount.
 
