@@ -70,5 +70,6 @@ and \t as it copies the string s to t. Use a switch.
             i++;
             j++;
         }
+    printf("i: %i, j: %i\n", i, j);
     return;
 }
