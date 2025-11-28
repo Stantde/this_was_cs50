@@ -89,7 +89,7 @@ prints the contents of variable c on some output medium, again usually the termi
 
 * Exercise 1-22. Write a program to remove all comments from a C program. Don't forget to handle quoted strings and character constants properly.
 
-* Exercise 1-23. Write a program to check a C program for rudimentary syntax errors like unbalanced parentheses, brackets and braces. Don't forget about quotes, both single and double, and comments. (This program is hard if you do it in full generality.)
+* [Exercise 1-23.](./chapter_01/1.23.c) Write a program to check a C program for rudimentary syntax errors like unbalanced parentheses, brackets and braces. Don't forget about quotes, both single and double, and comments. (This program is hard if you do it in full generality.)
 
 # K&R Chapter 2
 * 0010 11-07-2025 4:01:10
@@ -102,7 +102,7 @@ prints the contents of variable c on some output medium, again usually the termi
 * 1359 11-20-2025 It took me a while to notice this, but the entire course is offered on the cc4e website. I think instead of reading from K&R book and performing exercises as they are in it, I will instead work on the exercises from the website. If I need additional practice, I will return to the book.
 ## 2.5 Arithmetic Operators
 ## 2.6 Relational and Logical Operators
-* Exercise 2-1. Write a loop equivalent to the for loop above without using &&.
+* [Exercise 2-1.](./chapter_02/2.1.c) Write a loop equivalent to the for loop above without using &&.
 
 ## 2.7 Type Conversions
 * 1935 11-20-2025 042800
@@ -110,12 +110,16 @@ prints the contents of variable c on some output medium, again usually the termi
 sets isdigit to 1 if c is a digit, and to 0 if not. (In the test part of if, while, for, etc., "true" just means "non-zero.")
 
 * Includes rounding rules.
-* Exercise 2-3. Write an alternate version of squeeze(s1, s2) which deletes each character in s1 which matches any character in the string s2.
+* [Exercise 2-2.](./chapter_02/2.2.c) Write the function htoi(s), which converts a string of hexadecimal digits into its equivalent integer value. The allowable digits are 0 through 9, a through f, and A through F.
 
-* Exercise 2-4. Write the function any(s1, s2) which returns the first location in the string s1 where any character from the string s2 occurs, or -1 if s1 contains no characters from s2.
 
 ## 2.8 Increment and Decrement Operators
 * 2054 11-20-2025 04:43:41
+
+* [Exercise 2-3.](./chapter_02/2.3.c) Write an alternate version of squeeze(s1, s2) which deletes each character in s1 which matches any character in the string s2.
+
+* [Exercise 2-4.](./chapter_02/2.4.c) Write the function any(s1, s2) which returns the first location in the string s1 where any character from the string s2 occurs, or -1 if s1 contains no characters from s2.
+
 ## 2.9 Bitwise Logical Operators
 
 * [bitwise operations](https://www.geeksforgeeks.org/dsa/complete-reference-for-bitwise-operators-in-programming-coding/)
@@ -127,11 +131,11 @@ sets isdigit to 1 if c is a digit, and to 0 if not. (In the test part of if, whi
 * I'm struggling here. It may be time to call it a night. 4:46:59
 * Exercise 2-5. Modify getbits to number bits from left to right.
 
-* Exercise 2-6. Write a function wordlength() which computes the word length of the host machine, that is, the number of bits in an int. The function should be portable, in the sense that the same source code works on all machines.
+* [Exercise 2-6.](./chapter_02/2.6.c) Write a function wordlength() which computes the word length of the host machine, that is, the number of bits in an int. The function should be portable, in the sense that the same source code works on all machines.
 
-* Exercise 2-7. Write the function rightrot(n, b) which rotates the integer n to the right by b bit positions.
+* [Exercise 2-7.](./chapter_02/2.7.c) Write the function rightrot(n, b) which rotates the integer n to the right by b bit positions.
 
-* Exercise 2-8. Write the function invert(x, p, n) which inverts (i.e., changes 1 into 0 and vice versa) the n bits of x that begin at position p, leaving the others unchanged.
+* [Exercise 2-8.](./chapter_02/2.8.c) Write the function invert(x, p, n) which inverts (i.e., changes 1 into 0 and vice versa) the n bits of x that begin at position p, leaving the others unchanged.
 
 ## 2.10 Assignment Operators and Expressions
 
@@ -146,7 +150,44 @@ unsigned n;
         if (n & 01)
             b++;
     return(b);
-}```
+}
+```
 
-* Exercise 2-9. In a 2's complement number system, x & ( x-1 ) deletes the rightmost 1-bit in x. (Why?) Use this observation to write a faster version of bitcount.
+* [Exercise 2-9](./chapter_02/2.9.c). In a 2's complement number system, x & ( x-1 ) deletes the rightmost 1-bit in x. (Why?) Use this observation to write a faster version of bitcount.
+## 2.11 Conditional Expressions
+
+* The statements
+```
+if (a > b)
+    z = a;
+else
+    z = b;
+```
+    
+* Compute in z the maximum of a and b.
+* The conditional expression, written with the ternary operator "?:", provides an alternate way to write this and similar constructions. In the expression
+``` e1 ? e2 : e3 ```
+the expression **e1** is evaluated first. If it is non-zero (true), then the expression **e2** is evaluated, and that is the value of the conditional expression. Otherwise **e3** is evaluated, and that is the value. Only one of e2 and e3 is evaluated.
+Thus to set z to the maximum of a and b,
+``` z = (a > b) ? a : b; /* z = max(a, b) */ ```
+* If e2 and e3 are of different types, the type of the result is determined by the conversion rules discussed earlier in this chapter. For example, if f is a float, and n is an int, then the expression ```(n > 0) ? f : n```
+is of type double regardless of whether n is positive or not.
+* Exercise 2-10. Rewrite the function lower, which converts upper case letters to lower case, with a conditional expression instead of if-else.
+
+
+## 2.12 Precedence and Order of Evaluation
+# [CHAPTER 3: CONTROL FLOW](https://www.cc4e.com/book/chap03.md)
+## 3.1 Statements and Blocks
+* 11:21 11-28-2025 5:16:57
+## 3.2 If-Else
+* 11:24 11-28-2025 5:20:00
+## 3.3 Else-If
+* 11:27 11-28-2025
+## 3.4 Switch
+* 11:34 11-28-2025 5:28:00
+* [Example](./chapter_03/switch_example.c)
+* Break is necessary to prevent "falling through". Be especially watchful for this.
+* [Exercise 3-1.](./chapter_03/3.1.c) Write a function expand(s, t) which converts characters like newline and tab into visible escape sequences like \n and \t as it copies the string s to t. Use a switch.
+
+
 

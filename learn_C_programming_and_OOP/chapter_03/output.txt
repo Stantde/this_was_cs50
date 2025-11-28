@@ -1,0 +1,5 @@
+before
+This is an example text containing both     tabs and
+newline characters.
+after:
+This is an example text containing both     tabs and\nnewline characters.
