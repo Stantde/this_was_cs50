@@ -2,10 +2,27 @@
 * You will not provide direct answers to questions. Instead, you will ask leading questions allowing the student (me) to reach the desired conclusion.
 * Please answer the question, given the following:
 
-Given: Exercise 3-2. Write a function expand(s1 , s2) which expands shorthand 
-notations like a-z in the string s1 into the equivalent complete list abc...xyz 
-in s2. Allow for letters of either case and digits, and be prepared to handle 
-cases like a-b-c and a-z0-9 and -a-z. (A useful convention is that a leading or 
-trailing - is taken literally.)
+Given: /*
+[Exercise 3-3.](./chapter_03/3.3.c) In a 2's complement number representation, 
+our version of itoa does not handle the largest negative number, that is, the 
+value of n equal to -(2wordsize-1). Explain why not. Modify it to print that 
+value correctly, regardless of the machine it runs on.
 
-Question: How are you today? I have questions regarding the assignment.
+/* itoa: convert n to characters in s *\/
+ void itoa(int n, char s[])
+ {
+ int i, sign;
+ if ((sign = n) < 0) /* record sign *\/
+ n = -n; /* make n positive *\/
+ i = 0;
+ do { /* generate digits in reverse order *\/
+ s[i++] = n % 10 + '0'; /* get next digit *\/
+ } while ((n /= 10) > 0); /* delete it *\/
+ if (sign < 0)
+ s[i++] = '-';
+ s[i] = '\0';
+ reverse(s);
+ }
+*/  
+
+Question: Help!

@@ -1,8 +1,9 @@
 #include <stdio.h>
 #define MAXLINE 1000
 
-int check(char s[], int i, int max);
 void expand(char s[], char t[], int lim);
+int look_ahead(char s[], int i, int max);
+int jump(char t[], int j);
 int get_line(char s[], int lim);
 
 int main(){
@@ -46,26 +47,31 @@ a-z, a-Z, A-z, A-Z, a-b-c, a-b-C, a-B-c, a-B-C, A-b-c, A-b-C, A-B-c, A-B-C.
     int i, j;
     i=j=0;
         while (s[i] != '\0'){
-            switch (check(s, i, lim)){
+            switch (look_ahead(s, i, lim)){
                 case 0:
-                    // jump(s,t)
+                    // 0, found match partial expansion increase i by 3 on return
+                    i+=3;
+                    j = jump(t,j);
                     break;
                 case 1:
+                    // 1, full expansion increase i by 5 or so
+                    i+=5;
+                    j = jump(t,j);
                     break;
                 case 2:
-                    s[i++]=t[j++];
+                    // 2, none found
+                    t[j++]=s[i++];
                     break;                    
                 default:
                     printf("Impossible! What happened?!");
                     return;
-            }
-            
+            }            
         }
     printf("i: %i, j: %i\n", i, j);
     return;
 }
 // jump (t or f)// t space = x f space = y indicates return value for adding to index i or j
-int check(char s[], int i, int max){
+int look_ahead(char s[], int i, int max){
 /*
 Evaluates the current position and returns an int indicating the switch case,
 0, found match partial expansion increase i by 3 on return
@@ -88,4 +94,17 @@ base case... impossible? exit safely.
         }
     }
     return outcome;
+}
+int jump(char t[], int j){
+    /* 
+    fill t with chars a through z. does case matter?  ignore case. all upper
+    returns the new index of j.
+    */
+    int AZ = 26;
+    for (int i=0; i<AZ; i++, j++){
+        char itoa = i+'A';
+        t[j]=itoa;
+    }
+    
+    return j;
 }

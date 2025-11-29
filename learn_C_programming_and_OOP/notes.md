@@ -192,7 +192,7 @@ is of type double regardless of whether n is positive or not.
 * [Exercise 3-2.](./chapter_03/3.2.c) Write a function expand(s1 , s2) which expands shorthand notations like a-z in the string s1 into the equivalent complete list abc...xyz in s2. Allow for letters of either case and digits, and be prepared to handle cases like a-b-c and a-z0-9 and -a-z. (A useful convention is that a leading or trailing - is taken literally.)
 
 ## 3.6 Loops - Do-while
-* Exercise 3-3. In a 2's complement number representation, our version of itoa does not handle the largest negative number, that is, the value of n equal to -(2wordsize-1). Explain why not. Modify it to print that value correctly, regardless of the machine it runs on.
+* [Exercise 3-3.](./chapter_03/3.3.c) In a 2's complement number representation, our version of itoa does not handle the largest negative number, that is, the value of n equal to -(2wordsize-1). Explain why not. Modify it to print that value correctly, regardless of the machine it runs on.
 
 * Exercise 3-4. Write the analogous function itob(n, s) which converts the unsigned integer n into a binary character representation in s. Write itoh, which converts an integer to hexadecimal representation.
 
