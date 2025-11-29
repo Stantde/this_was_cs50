@@ -188,6 +188,13 @@ is of type double regardless of whether n is positive or not.
 * [Example](./chapter_03/switch_example.c)
 * Break is necessary to prevent "falling through". Be especially watchful for this.
 * [Exercise 3-1.](./chapter_03/3.1.c) Write a function expand(s, t) which converts characters like newline and tab into visible escape sequences like \n and \t as it copies the string s to t. Use a switch.
+## 3.5 Loops - While and For
+* [Exercise 3-2.](./chapter_03/3.2.c) Write a function expand(s1 , s2) which expands shorthand notations like a-z in the string s1 into the equivalent complete list abc...xyz in s2. Allow for letters of either case and digits, and be prepared to handle cases like a-b-c and a-z0-9 and -a-z. (A useful convention is that a leading or trailing - is taken literally.)
 
+## 3.6 Loops - Do-while
+* Exercise 3-3. In a 2's complement number representation, our version of itoa does not handle the largest negative number, that is, the value of n equal to -(2wordsize-1). Explain why not. Modify it to print that value correctly, regardless of the machine it runs on.
 
+* Exercise 3-4. Write the analogous function itob(n, s) which converts the unsigned integer n into a binary character representation in s. Write itoh, which converts an integer to hexadecimal representation.
+
+* Exercise 3-5. Write a version of itoa which accepts three arguments instead of two. The third argument is a minimum field width; the converted number must be padded with blanks on the left if necessary to make it wide enough.
 
