@@ -194,7 +194,7 @@ is of type double regardless of whether n is positive or not.
 ## 3.6 Loops - Do-while
 * [Exercise 3-3.](./chapter_03/3.3.c) In a 2's complement number representation, our version of itoa does not handle the largest negative number, that is, the value of n equal to -(2wordsize-1). Explain why not. Modify it to print that value correctly, regardless of the machine it runs on.
 
-* Exercise 3-4. Write the analogous function itob(n, s) which converts the unsigned integer n into a binary character representation in s. Write itoh, which converts an integer to hexadecimal representation.
+* [Exercise 3-4.](./chapter_03/3.4.c) Write the analogous function itob(n, s) which converts the unsigned integer n into a binary character representation in s. Write itoh, which converts an integer to hexadecimal representation.
 
 * Exercise 3-5. Write a version of itoa which accepts three arguments instead of two. The third argument is a minimum field width; the converted number must be padded with blanks on the left if necessary to make it wide enough.
 
