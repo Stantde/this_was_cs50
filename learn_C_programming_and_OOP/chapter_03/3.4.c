@@ -20,7 +20,7 @@ hexadecimal integer in s.
 */
     char s[MAXLINE];
     unsigned int n = 20;
-    int hex_test=101;
+    int hex_test=50406;
     int base=16;
     
     itob(n, s);
@@ -28,7 +28,7 @@ hexadecimal integer in s.
     itoh(hex_test, s);
     printf("%i itoh: %s\n", hex_test, s);
     itoany(hex_test, s, base);
-    printf("%i itoh: %s\n", hex_test, s);
+    printf("%i itoany: %s\n", hex_test, s);
     
     return 0;
 }
