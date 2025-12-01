@@ -196,5 +196,6 @@ is of type double regardless of whether n is positive or not.
 
 * [Exercise 3-4.](./chapter_03/3.4.c) Write the analogous function itob(n, s) which converts the unsigned integer n into a binary character representation in s. Write itoh, which converts an integer to hexadecimal representation.
 
-* Exercise 3-5. Write a version of itoa which accepts three arguments instead of two. The third argument is a minimum field width; the converted number must be padded with blanks on the left if necessary to make it wide enough.
+* [Exercise 3-5.](./chapter_03/3.5.c) Write a version of itoa which accepts three arguments instead of two. The third argument is a minimum field width; the converted number must be padded with blanks on the left if necessary to make it wide enough.
 
+# [CHAPTER 4: FUNCTIONS AND PROGRAM STRUCTURE](https://www.cc4e.com/book/chap04.md)
